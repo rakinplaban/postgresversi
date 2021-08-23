@@ -1,0 +1,16 @@
+{% extends 'sqlmodel\layout.html' %}
+{% block title %} 
+    edit 
+{% endblock %}
+
+{% block body %}
+  <div style="margin: 10px 40px 0px 30px;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_table}}
+        <br>
+        <input class="btn btn-primary" type="submit" value="Insert">
+ 
+    </form>
+  </div>
+{%endblock%}
