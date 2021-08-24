@@ -6,4 +6,5 @@ urlpatterns = [
     path("edit",views.edit,name="edit"),
     path("editdata/<int:id>",views.editdata,name="editdata"),
     path("deletedata/<int:id>",views.deletedata,name="deletedata"),
+    path("jsonobject",views.jsonobject,name="jsonobject"),
 ]

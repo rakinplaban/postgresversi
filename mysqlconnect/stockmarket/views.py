@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import Stockmarket
 from .forms import stock_form
+import json
 # Create your views here.
 
 def index(request):
@@ -45,3 +46,12 @@ def deletedata(request,id):
     display = Stockmarket.objects.get(pk = id)
     display.delete()
     return HttpResponseRedirect(reverse("index"))
+
+
+def jsonobject(request):
+    with open("stock_market_data.json", "r") as readit:
+        jsonobject = json.load(readit)
+    
+        return render(request,"sqlmodel/jsonobject.html",{
+            "jsonobject" : jsonobject
+        })
